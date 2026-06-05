@@ -16,21 +16,23 @@ When you open the dashboard, you will be greeted by the gateway login screen.
 *   **Default Master Key:** `admin`
 *   Enter your key and click **Authenticate**.
 
-*(If you see a warning saying "⚠️ DB sync missing!", it means you have not bound the `IOT_DB` KV namespace to your worker. Return to Cloudflare settings to bind it before attempting to save configuration updates).*
+*(If you see a warning saying "⚠️ IOT_DB namespace missing!", it means you have not bound the `IOT_DB` KV namespace to your worker. Return to Cloudflare settings to bind it before attempting to save configuration updates).*
 
 ## 3. Using the Dashboard
 
-The dashboard consists of 4 main tabs:
+The dashboard consists of 5 main sections:
 
 ### 📡 Endpoints (Info)
 This is where you retrieve your connection strings to import into your client application.
-*   **Direct Stream Link:** The direct URI format (VLESS or Trojan based on active mode). You can scan the generated QR code using your mobile device.
-*   **Cloud Sync URL:** The base API path for direct Sub/Config syncing.
+*   **Profile Cards:** Your profiles (Default + Multi-User) are displayed as individual cards.
+*   **Show QR Code:** Click the **Show QR Code** button on any card to open a modal with a scannable QR code for easy mobile setup.
+*   **Cloud Sync URL:** The base API path for direct Sub/Config syncing. Use the copy button to grab the link.
 
 ### 📊 Metrics (Network)
 Displays network properties regarding the processing Cloudflare edge node.
+*   **Live Profile Usage:** Shows active connection counts and last activity time for your profiles (Note: resets if the worker restarts).
 *   **Network Cards:** View Origin IP, executing Edge Node (Colo), and Regional data.
-*   **Latency Diagnostics:** Enter your clean IP list in the Advanced tab and run real-time fetch requests directly from your browser to measure actual routing latency.
+*   **Latency Diagnostics:** Click "Run Diagnostics" to measure real-time latency from your browser to your configured Clean IPs.
 
 ### ⚙️ System (Settings)
 Configure core gateway profiles:
@@ -41,12 +43,16 @@ Configure core gateway profiles:
 *   **Backup & Restore:** Export your current dashboard parameters to a local `.json` file, or import a previously saved backup file to populate all inputs instantly.
 
 ### 🌐 Advanced (Network)
-Fine-tune transport properties:
-*   **Clean IPs:** Input your preferred clean Cloudflare IPs (one per line). The subscription generator will automatically multiply profiles using these endpoints.
-*   **Resolver IP:** Set custom DNS resolution parameters for connection routing.
-*   **Maintenance Hosts:** A comma-separated list of websites (e.g., `www.ubuntu.com, www.docker.com`). Unauthorized users scanning your domain will be proxied to these sites.
-*   **TCP Fast Open (TFO):** Toggle TCP Fast Open flags inside the configuration profiles.
+Fine-tune transport properties and integrations:
+*   **Clean IPs (Multi-Generator):** Input your preferred clean Cloudflare IPs (comma or line separated). The subscription generator automatically multiplies configs for all IPs.
+*   **Multi-Sensor Profiles:** Create separate profiles for different users. Format: `uuid:Name`. Users can access their specific config by appending `?sub=Name` to the Sync URL.
+*   **Telegram Bot:** Enter your Bot Token and Chat ID to receive login alerts and manage the gateway remotely via Telegram commands (e.g., `/status`, `/pause`).
+*   **Cloudflare Analytics:** Optional. Enter your Account ID and API Token to monitor daily Worker request usage (limit 100k/day).
+*   **Kill Switch:** An emergency toggle to immediately pause all proxy traffic without deleting the worker.
 *   **Secure Hello (ECH):** Toggle Encrypted Client Hello parameters in client configurations.
+
+### 📋 Activity Logs
+*   View a history of recent login attempts and configuration changes.
 
 ## 4. Applying Changes
 
