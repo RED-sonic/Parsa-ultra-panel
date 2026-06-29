@@ -1,4 +1,4 @@
-# pArSa ULtrA pAnEL - User Guide
+# CACTUS PANEL AI - User Guide
 
 This guide provides comprehensive instructions on how to access, configure, and manage your pArSa ULtrA pAnEL gateway.
 

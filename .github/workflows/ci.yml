@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches:
+      - feature/cactus-panel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install
+        run: npm install
+      - name: Run tests (placeholder)
+        run: npm run ci-test
+
+  deploy-render:
+    needs: build
+    if: github.event_name == 'push' && secrets.RENDER_API_KEY && secrets.RENDER_SERVICE_ID
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        run: |
+          echo "Triggering Render deploy (service id from secrets)"
+          curl -X POST \
+            -H "Accept: application/json" \
+            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+            "https://api.render.com/deploys" \
+            -d '{"serviceId":"'${{ secrets.RENDER_SERVICE_ID }}'"}'

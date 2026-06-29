@@ -1,0 +1,7 @@
+body { font-family: 'Vazirmatn', Tahoma, sans-serif; background:#0b0b0b; color:#e6ffe6; margin:0; padding:0; }
+.header { display:flex; align-items:center; gap:12px; padding:18px; background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)); }
+.logo { width:48px; height:48px; }
+h1{ color:#39FF14; margin:0 }
+main{ padding:24px }
+a{ color:#00ffd1 }
+footer{ padding:12px; text-align:center; color:#8f8f8f }
