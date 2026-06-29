@@ -1,9 +1,9 @@
 <div align="center">
 
-# pArSa ULtrA pAnEL
+# CACTUS PANEL AI
 ### The Evolution of Intelligent Network Edge Management
 
-**pArSa ULtrA pAnEL** is a high-performance, request-based management solution running entirely on Cloudflare Workers. This fork redefines how you manage proxy connections by converting traditional data limits into request-based quotas and unifying multiple nodes into a single, powerful gateway.
+**CACTUS PANEL AI** is a high-performance, request-based management solution running entirely on Cloudflare Workers. This fork redefines how you manage proxy connections by converting traditional data limits into request-based quotas and unifying multiple nodes into a single, powerful gateway.
 
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
@@ -12,7 +12,7 @@
 
 ---
 
-## 🌟 Why pArSa ULtrA pAnEL?
+## 🌟 Why CACTUS PANEL AI?
 
 We have re-engineered the original Nahan project for maximum control, speed, and aesthetics. With **Cloudflare D1** at its core, this panel provides a robust experience for managing complex, multi-node proxy setups.
 
@@ -68,4 +68,6 @@ For detailed instructions on configuring multi-node connections, setting up the 
 
 <div align="center">
 Made with ❤️ for the Proxy Community
+CACTUS PANEL AI
+CACTUS AI🌵
 </div>
